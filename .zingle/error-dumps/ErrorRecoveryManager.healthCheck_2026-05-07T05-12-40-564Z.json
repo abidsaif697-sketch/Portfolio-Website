@@ -1,0 +1,46 @@
+{
+  "operation": "ErrorRecoveryManager.healthCheck",
+  "timestamp": "2026-05-07T05:12:40.564Z",
+  "error": {
+    "name": "Error",
+    "message": "Operation HttpApiClient.healthCheck failed on attempt 1: - getaddrinfo ENOTFOUND portal.getzingle.com",
+    "stack": "Error: Operation HttpApiClient.healthCheck failed on attempt 1: - getaddrinfo ENOTFOUND portal.getzingle.com\n\tat t.error (c:\\Users\\MOI\\.antigravity\\extensions\\zingleai.zingleai-codebase2docs-0.1.156-universal\\dist\\extension.js:67:322)\n\tat hx.executeWithRecovery (c:\\Users\\MOI\\.antigravity\\extensions\\zingleai.zingleai-codebase2docs-0.1.156-universal\\dist\\extension.js:51:11843)\n\tat process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n\tat async t.executeWithRetry (c:\\Users\\MOI\\.antigravity\\extensions\\zingleai.zingleai-codebase2docs-0.1.156-universal\\dist\\extension.js:51:18083)\n\tat async Yu.checkApiConnectivity (c:\\Users\\MOI\\.antigravity\\extensions\\zingleai.zingleai-codebase2docs-0.1.156-universal\\dist\\extension.js:952:4988)\n\tat async Yu.checkConnectivity (c:\\Users\\MOI\\.antigravity\\extensions\\zingleai.zingleai-codebase2docs-0.1.156-universal\\dist\\extension.js:952:3776)"
+  },
+  "context": {
+    "functionName": "healthCheck",
+    "elapsedTime": 43,
+    "metadata": {
+      "errorType": "Error",
+      "errorMessage": "getaddrinfo ENOTFOUND portal.getzingle.com"
+    },
+    "requestId": "idle",
+    "workflow": "",
+    "loggerName": "ErrorRecoveryManager",
+    "timestamp": "2026-05-07T05:12:40.564Z"
+  },
+  "system": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpus": 14,
+    "totalMemory": 16619487232,
+    "freeMemory": 1411768320,
+    "uptime": 351266.234,
+    "nodeVersion": "v22.21.1",
+    "vscodeVersion": "1.107.0"
+  },
+  "extensionState": {
+    "requestId": "idle",
+    "workflow": "",
+    "entity": "",
+    "activeWorkspace": "Portfolio Webste",
+    "workspacePath": "d:\\Projects\\Portfolio Webste"
+  },
+  "memoryUsage": {
+    "rss": 362119168,
+    "heapTotal": 391528448,
+    "heapUsed": 331619852,
+    "external": 33436727,
+    "arrayBuffers": 0
+  }
+}

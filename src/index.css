@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Cairo:wght@300;400;600;700;800;900&display=swap');
+
+/* ─── Design Tokens ─────────────────────────────── */
+:root {
+  --overlay-boost: 0;
+  --bg-dark-rgb: 8, 8, 8;
+  --text-rgb: 242, 237, 232;
+  --bg-dark:    #080808;
+  --bg-mid:     #101010;
+  --bg-card:    #141414;
+  --text-light: #f2ede8;
+  --text-muted: rgba(var(--text-rgb),0.42);
+  --accent:     #c9a96e;        /* warm gold */
+  --accent-2:   #6e9e8f;        /* sage */
+  --accent-3:   #d4826a;        /* terracotta */
+  --border:     rgba(var(--text-rgb),0.08);
+  --border-h:   rgba(var(--text-rgb),0.18);
+
+  --font-display: 'Poppins', sans-serif;   /* bold headings */
+  --font-body:    'Inter', sans-serif;      /* body copy */
+  --font-serif:   'Cormorant Garamond', serif; /* elegant accents */
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── Light Mode Overrides ─────────────────────── */
+html.light {
+  --overlay-boost: 0.5;
+  --bg-dark-rgb: 248, 245, 240;
+  --text-rgb: 8, 8, 8;
+  --bg-dark:    #f8f5f0;
+  --bg-mid:     #ffffff;
+  --bg-card:    #f2eee8;
+  --text-light: #080808;
+  --text-muted: rgba(var(--text-rgb),0.6);
+  --border:     rgba(var(--text-rgb),0.1);
+  --border-h:   rgba(var(--text-rgb),0.25);
+  --accent:     #b8975a;        /* slightly darker warm gold for contrast */
+}
+
+/* ─── Theme specific visibility ─────────────────── */
+html.light .dark-only { display: none !important; }
+.light-only { display: none !important; }
+html.light .light-only { display: block !important; }
+
+
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+sup { font-size: 0.55em; vertical-align: super; }
+button { font-family: inherit; }
+
+/* ─── Arabic / RTL overrides ─────────────────────── */
+:root[lang="ar"] {
+  --font-display: 'Cairo', sans-serif;
+  --font-body:    'Cairo', sans-serif;
+}
+html[dir="rtl"] body { letter-spacing: 0 !important; }
+html[dir="rtl"] .section-label { letter-spacing: 0.05em; }
+
+/* ─── Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+/* ─── Lenis ─────────────────────────────────────── */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ─── Selection ─────────────────────────────────── */
+::selection { background: var(--accent); color: var(--bg-dark); }
+
+/* ─── Custom cursor ─────────────────────────────── */
+.cursor-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(201,169,110,0.5);
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s var(--ease-out), height 0.25s var(--ease-out);
+}
+
+/* ─── Slider drag cursor override ───────────────── */
+.slider-drag { cursor: grab; }
+.slider-drag:active { cursor: grabbing; }
+
+/* ─── Section label ─────────────────────────────── */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.22em; color: var(--accent);
+  text-transform: uppercase; margin-bottom: 20px;
+}
+
+/* ─── Tag chip ──────────────────────────────────── */
+.chip {
+  font-family: var(--font-body); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.05em; color: rgba(var(--text-rgb),0.55);
+  border: 1px solid var(--border);
+  padding: 5px 14px; border-radius: 100px;
+  white-space: nowrap;
+}
