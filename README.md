@@ -1,16 +1,47 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Banner](public/previews/banner.png)
 
-Currently, two official plugins are available:
+A high-fidelity, cinematic professional portfolio built with **React**, **Vite**, **Framer Motion**, and **Three.js**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Features
 
-## React Compiler
+- **Cinematic Experience**: Immersive dark-mode design with fluid animations.
+- **Motion System**: Scroll-driven parallax effects and staggered reveal animations.
+- **Admin Dashboard**: Real-time content management without a backend.
+- **Responsive Layout**: Optimized for all devices from mobile to ultra-wide displays.
+- **Internationalization**: Support for multiple languages.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js (v18+)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/abidsaif697-sketch/Portfolio-Website.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **3D/Graphics**: [Three.js](https://threejs.org/)
+- **Styling**: Vanilla CSS
+
+## 📄 License
+
+This project is licensed under the MIT License.
