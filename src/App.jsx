@@ -4,6 +4,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import { AdminProvider } from './context/AdminContext';
 import { useLanguage } from './hooks/useLanguage';
 import { useLocale } from './hooks/useLocale';
+import { useBreakpoint } from './hooks/useBreakpoint';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminPanel from './components/admin/AdminPanel';
 import SmoothScroll from './components/SmoothScroll';
@@ -13,6 +14,7 @@ import WorkSection from './components/WorkSection';
 import ExperienceSection from './components/ExperienceSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
+import TestimonialsSection from './components/TestimonialsSection';
 import ContactSection from './components/ContactSection';
 import Cursor from './components/Cursor';
 import Preloader from './components/Preloader';
@@ -21,17 +23,18 @@ import Preloader from './components/Preloader';
 function Footer() {
   const content = useLocale();
   const { lang } = useLanguage();
+  const { isMobile, isTablet } = useBreakpoint();
   const pages = lang === 'ar'
-    ? [{ l: 'أعمالي', h: '#work' }, { l: 'خبراتي', h: '#experience' }, { l: 'عني', h: '#about' }, { l: 'خدماتي', h: '#services' }, { l: 'تواصل', h: '#contact' }]
-    : [{ l: 'Work', h: '#work' }, { l: 'Experience', h: '#experience' }, { l: 'About', h: '#about' }, { l: 'Services', h: '#services' }, { l: 'Contact', h: '#contact' }];
+    ? [{ l: 'أعمالي', h: '#work' }, { l: 'خبراتي', h: '#experience' }, { l: 'عني', h: '#about' }, { l: 'خدماتي', h: '#services' }, { l: 'التقييمات', h: '#testimonials' }, { l: 'تواصل', h: '#contact' }]
+    : [{ l: 'Work', h: '#work' }, { l: 'Experience', h: '#experience' }, { l: 'About', h: '#about' }, { l: 'Services', h: '#services' }, { l: 'Reviews', h: '#testimonials' }, { l: 'Contact', h: '#contact' }];
   const socials = [
     { label: 'Behance',  href: content.contact.behance },
     { label: 'LinkedIn', href: '#' },
     { label: 'Email',    href: `mailto:${content.contact.email}` },
   ];
   return (
-    <footer style={{ background: 'var(--bg-card)', padding: '80px 80px 52px', borderTop: '1px solid var(--border)' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', gap: '80px', alignItems: 'start', marginBottom: '60px' }}>
+    <footer style={{ background: 'var(--bg-card)', padding: isMobile ? '60px 20px 40px' : isTablet ? '70px 40px 44px' : '80px 80px 52px', borderTop: '1px solid var(--border)' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : '1.5fr 1fr 1fr', gap: isMobile ? '48px' : '80px', alignItems: 'start', marginBottom: '60px' }}>
         <div>
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '26px', letterSpacing: '-0.04em', color: 'var(--text-light)', marginBottom: '6px' }}>{content.nav.name}</div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 500, letterSpacing: '0.1em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: '18px' }}>{content.nav.subtitle}</div>
@@ -83,6 +86,7 @@ function PortfolioApp() {
           <ExperienceSection />
           <AboutSection />
           <ServicesSection />
+          <TestimonialsSection />
           <ContactSection />
           <Footer />
         </main>

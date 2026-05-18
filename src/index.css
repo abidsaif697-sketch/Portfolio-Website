@@ -120,3 +120,16 @@ html.lenis { height: auto; }
   padding: 5px 14px; border-radius: 100px;
   white-space: nowrap;
 }
+
+/* ─── Responsive Utilities ───────────────────────── */
+
+/* Hide custom cursor on real touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}
+
+/* Mobile typography & spacing resets */
+@media (max-width: 767px) {
+  html { font-size: 15px; }
+  body { overflow-x: hidden; }
+}
