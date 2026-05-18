@@ -31,7 +31,7 @@ export default function Hero() {
       <motion.div style={{ position: 'absolute', inset: 0, y: videoY, scale: videoScale, originY: 0 }}>
         {heroMedia.type === 'video' ? (
           <>
-            <video className={heroMedia.lightSrc ? 'dark-only' : ''} key={heroMedia.src} autoPlay muted loop playsInline
+            <video className={heroMedia.lightSrc ? 'dark-only' : ''} key={heroMedia.src} autoPlay muted loop playsInline preload="metadata"
               style={{
                 width: '100%', height: '100%', objectFit: 'cover',
                 objectPosition: `${heroMedia.posX}% ${heroMedia.posY}%`,

@@ -41,6 +41,8 @@ function SlideCard({ slide, isActive, onClick, onViewProject }) {
       <motion.img
         src={slide.image}
         alt={slide.title}
+        loading="lazy"
+        decoding="async"
         style={{
           position: 'absolute', inset: -40,
           width: 'calc(100% + 80px)', height: 'calc(100% + 80px)',
@@ -283,6 +285,8 @@ function ProjectGrid({ slides, onViewProject }) {
           <motion.img
             src={slide.image}
             alt={slide.title}
+            loading="lazy"
+            decoding="async"
             variants={{ hovered: { scale: 1.07 } }}
             transition={{ duration: 0.6 }}
             style={{
