@@ -56,9 +56,11 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '28px', borderTop: '1px solid var(--border)' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'center', gap: '20px', paddingTop: '28px', borderTop: '1px solid var(--border)' }}>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--text-muted)' }}>© 2026 {content.nav.name} · All rights reserved.</p>
-        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '12px', color: 'var(--text-muted)', letterSpacing: '0.04em' }}>Designed & built with care ✦</p>
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'transparent', border: 'none', fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 600, color: 'var(--text-muted)', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-light)'} onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>
+          {lang === 'ar' ? 'العودة للأعلى ↑' : 'Back to top ↑'}
+        </button>
       </div>
     </footer>
   );
